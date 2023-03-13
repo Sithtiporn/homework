@@ -1,49 +1,49 @@
-﻿class program {
-    static void Main(string[] arge) {
-        Console.Write("password :" );
-        int x = int.Parse(Console.ReadLine());
+﻿    class Program
+    {
+        static void Main(string[] args)
+        {
+            string menu;
+            int dayOfWeek, timeOfDay;
+            int breakfastSet = 5;
+            int weekendSet = 2;
+            int coffee = 3;
 
-        Console.Write("agency :");
-        string a = (Console.ReadLine());
+            
+            Console.WriteLine("Please enter a number from 1 to 7 to represent the day of the week:");
+            Console.WriteLine("1: Monday, 2: Tuesday, 3: Wednesday, 4: Thursday, 5: Friday, 6: Saturday, 7: Sunday");
+            dayOfWeek = int.Parse(Console.ReadLine());
 
-        if(x <= 999999 && x >= 0) {
-            int b = x / 100000 % 10;
-            int s = x / 10000 % 10;
-            int m = x / 1000 % 10;
-            int e = x / 100 % 10;
-            int q = x / 10 % 10;
-            int i = x % 10;
-        
-        if(a == "CIA") {
-            if(m >= 6 && m != 8 && q != 1 && q != 3 && q != 5 && m >= 6 && m != 8) {
-                Console.WriteLine("True");
-            }
-            else {
-                Console.WriteLine("false");
-            }
-          }
+            
+            Console.WriteLine("Please enter a number from 8 to 18 to represent the time of day (in 24-hour format):");
+            Console.WriteLine("8:00 AM to 6:00 PM");
+            timeOfDay = int.Parse(Console.ReadLine());
 
-        if(a == "FBI") {
-            if(b >= 4 && b <= 7 && e % 2 == 0 && e != 6 && s % 2 == 1) {
-                Console.WriteLine("True");
-            }
-            else {
-                Console.WriteLine("False");
-            }
+            while (true)
+            {
+                Console.WriteLine("Please enter your menu choice:");
+                Console.WriteLine("1. Breakfast Set");
+                Console.WriteLine("2. Weekend Set");
+                Console.WriteLine("3. Coffee");
+                Console.WriteLine("Type 'End' to exit.");
+                menu = Console.ReadLine();
+
+                if (menu == "End")
+                {
+                    break;
+                }
+                else if (menu == "Breakfast Set")
+                {
+                    if (timeOfDay > 11)
+                    {
+                        Console.WriteLine("Sorry your order is not available");
+                        continue;
+                    }
+                     if (breakfastSet == 0)
+                    {
+                        Console.WriteLine("Sorry your order is out of stock");
+                        continue;
+                 }
+              }
           }
-          if(a == "NSA") {
-            if(i % 30 != 0 && e % 3 == 0 && e % 2 != 0 && b == 7 ||s == 7 || m == 7 || e == 7 || q == 7 || i == 7) {
-                Console.WriteLine("True");
-            }
-            else {
-                Console.WriteLine("false");
-            }
-          }
-          }
-            else {
-                Console.WriteLine("false");
-            }
-        
-            }
-          }
-        
+     }
+}
